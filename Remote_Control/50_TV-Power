@@ -1,0 +1,21 @@
+#!/bin/sh
+#Place in /etc/pm/sleep.d/50_TV-Power.sh
+
+case "$1" in
+        resume)
+                #Do what you need on resume
+                python /usr/local/bin/TV_Power-Samsung_On.py &
+                ;;
+        thaw)
+                #Do what you need on thaw
+                python /usr/local/bin/TV_Power-Samsung_On.py &
+                ;;
+        suspend)
+                #Do what you need on suspend
+                python /usr/local/bin/TV_Power-Samsung_Off.py &
+                ;;
+        hibernate)
+                #Do what you need on hibernate
+                python /usr/local/bin/TV_Power-Samsung_Off.py &
+                ;;
+esac
